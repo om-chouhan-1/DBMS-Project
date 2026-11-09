@@ -1,0 +1,7 @@
+{
+  "name": "workspace-dashboard-sqlite",
+  "version": "1.0.0",
+  "private": true,
+  "engines": { "node": ">=22.13" },
+  "scripts": { "start": "node server.js", "reset": "node server.js --reset" }
+}
