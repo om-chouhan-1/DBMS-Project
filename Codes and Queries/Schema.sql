@@ -65,14 +65,3 @@ CREATE TABLE Entries (
     FOREIGN KEY (task_id) 
     REFERENCES tasks (task_id)    
 );
-
--- Running timers (started but not yet stopped).
--- When a timer is stopped it is saved as a row in Entries and removed from here.
--- (server.js also creates this table automatically on start if it is missing.)
-CREATE TABLE IF NOT EXISTS Active_Timers (
-    timer_id   serial    PRIMARY KEY,
-    task_id    int       NOT NULL,
-    started_at timestamp NOT NULL,
-    CONSTRAINT active_timers_one_per_task UNIQUE (task_id),
-    FOREIGN KEY (task_id) REFERENCES Tasks (task_id)
-);
