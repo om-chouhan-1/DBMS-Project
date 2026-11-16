@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="color-scheme" content="dark">
+  <title>Workspace Dashboard</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header>
+    <h1>Workspace Dashboard</h1>
+    <div class="header-right">
+      <label class="signin">
+        <span>Signed in as</span>
+        <select id="signinSelect" aria-label="Signed in as"></select>
+      </label>
+      <button id="configBtn" type="button" onclick="toggleDrawer()">Configure</button>
+    </div>
+  </header>
+
+  <!-- Settings drawer -->
+  <div id="overlay" class="overlay" onclick="toggleDrawer()"></div>
+  <aside id="drawer" class="drawer">
+    <div class="drawer-head">
+      <h2>Display settings</h2>
+      <button class="close-btn" type="button" onclick="toggleDrawer()" aria-label="Close">&times;</button>
+    </div>
+    <div class="drawer-body" id="drawerBody"></div>
+  </aside>
+
+  <main id="content">
+    <div class="loader">Loading…</div>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
